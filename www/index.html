@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html style="height: 100%; margin: 0; padding: 0">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width = device-width, initial-scale = 1, minimum-scale = 1, maximum-scale = 1, user-scalable = no, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Ampron Clock" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Clock</title>
+    <style type="text/css">
+      @font-face {
+        font-family: "Digital-7";
+        src: url(digital-7.ttf) format("truetype");
+      }
+      p.customfont {
+        font-family: "Digital-7";
+      }
+    </style>
+
+    <style type="text/css">
+      /* Customizable font and colors */
+      html {
+        /* background:#262A39; */
+        background: black;
+        font-family: "Digital-7", sans-serif;
+        font-weight: normal;
+        color: orange;
+      }
+    </style>
+  </head>
+
+  <body
+    style="
+      display: flex;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <span id="clocktext" style="font-kerning: none; text-align: center"></span>
+
+    <script type="text/javascript">
+      "use strict";
+
+      var textElem = document.getElementById("clocktext");
+      var targetWidth = 0.8; // Proportion of full screen width
+      var curFontSize = 20; // Do not change
+
+      function updateClock() {
+        var d = new Date();
+        console.log(d);
+        var flip = false;
+        if (d.getMinutes() % 2) {
+          flip = true;
+        }
+        console.log(flip);
+        var s = "";
+        var t = "";
+        var timeString = "";
+        var dateString = "";
+        var hours = d.getHours();
+        if (hours > 12) {
+          hours = hours - 12;
+        }
+        s += (10 > hours ? "0" : "") + hours;
+        s += ":";
+        s += (10 > d.getMinutes() ? "0" : "") + d.getMinutes();
+        //s += ":";
+        //s += (10 > d.getSeconds() ? "0" : "") + d.getSeconds();
+        timeString += "<span id='timetext'>";
+        timeString += s;
+        timeString += "</span>";
+
+        dateString += d.getMonth() + 1;
+        dateString += ".";
+        dateString += d.getDate();
+        dateString += ".";
+        dateString += d.getFullYear();
+
+        if (flip) {
+          t += timeString;
+          t += "<br><br>";
+          t += dateString;
+        } else {
+          t += dateString;
+          t += "<br><br>";
+          t += timeString;
+        }
+
+        textElem.innerHTML = t;
+        updateTextSize();
+
+        setTimeout(updateClock, 1000 - (d.getTime() % 1000) + 20);
+      }
+
+      function updateTextSize() {
+        var timeElem = document.getElementById("timetext");
+        for (var i = 0; 3 > i; i++) {
+          // Iterate for better better convergence
+          curFontSize *=
+            targetWidth /
+            (textElem.offsetWidth / textElem.parentNode.offsetWidth);
+          textElem.style.fontSize = curFontSize + "pt";
+          timeElem.style.fontSize = curFontSize * 1.75 + "pt";
+        }
+      }
+
+      updateClock();
+      updateTextSize();
+      window.addEventListener("resize", updateTextSize);
+    </script>
+  </body>
+</html>
