@@ -12,10 +12,31 @@ Some scripts and html to make a clock out of a Raspberry Pi. Original clock html
 
 ![Image Selector](img/select_image.png)
 
+* Select SD card under storage
+* Click Write
+
 ### Setup Software
 
 1. Hide Mouse Cursor
    * Install unclutter
-` apt-get install -y unclutter `
+`  `
 1. Disable Screen Blanking
 1. 
+
+
+
+### Clock Setup
+
+git clone https://github.com/david-fry/raspberry-pi-clock.git
+
+sudo apt-get -y install lighttpd
+
+sudo xdg-open /etc/lighttpd/lighttpd.conf
+
+edit config file
+
+sudo apt-get install -y unclutter
+
+ln -s raspberry-pi-clock/.xsession .xsession
+
+sudo reboot
