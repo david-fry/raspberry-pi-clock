@@ -15,13 +15,19 @@ Some scripts and html to make a clock out of a Raspberry Pi. Original clock html
 * Select SD card under storage
 * Click Write
 
-### Setup Software
+### Raspberry Pi Setup
 
-1. Hide Mouse Cursor
-   * Install unclutter
-`  `
-1. Disable Screen Blanking
-1. 
+* Install SD card into Raspberry PI
+* Hook up Mouse, Keyboard, Monitor, and Power to Raspberry Pi
+* Wait for device to boot
+* Setup Location
+
+![Setup Location](img/1_setup_location.png)
+
+* Change Password (Ask your teacher)
+
+![Change Password](img/2_change_password.png)
+
 
 
 
