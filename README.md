@@ -1,6 +1,6 @@
 # raspberry-pi-clock
 ![Clock Screenshot](/img/clock.png)
-Some scripts and html to make a clock out of a Raspberry Pi. Original clock html was from [this](https://ampron.eu/article/use-case/digital-wall-clock-with-raspberry-pi/) excellent article from Ampron.
+Some scripts and html to make a clock out of a Raspberry Pi. Original clock html was from [this](https://ampron.eu/article/use-case/digital-wall-clock-with-raspberry-pi/) excellent article from Ampron. Added Date to original clock, changed colors, and added flipping the date and time every hour to prevent screen burn in.
 
 
 ## Setup
