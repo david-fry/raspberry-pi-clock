@@ -4,7 +4,16 @@ Some scripts and html to make a clock out of a Raspberry Pi. Original clock html
 
 ## Setup
 
-1. Install [Rasbian](https://www.raspberrypi.com/software/) on to Raspberry Pi
+### Install OS
+
+* Install [Rasbian](https://www.raspberrypi.com/software/) on to Raspberry Pi
+* Use Raspberry Pi imager to write image onto MicroSD Card
+* Select Raspberry Pi OS (32-bit)
+
+![Image Selector](img/select_image.png)
+
+### Setup Software
+
 1. Hide Mouse Cursor
    * Install unclutter
 ` apt-get install -y unclutter `
