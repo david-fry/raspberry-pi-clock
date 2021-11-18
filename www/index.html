@@ -58,12 +58,10 @@
 
       function updateClock() {
         var d = new Date();
-        console.log(d);
         var flip = false;
-        if (d.getMinutes() % 2) {
+        if (d.getHours() % 2) {
           flip = true;
         }
-        console.log(flip);
         var s = "";
         var t = "";
         var timeString = "";
