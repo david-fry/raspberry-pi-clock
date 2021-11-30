@@ -13,5 +13,5 @@ cd ..
 unclutter -idle 0.1 &
 
 #start chrome and display clock
-chromium-browser -start-fullscreen -window-size=1920,1080 -kiosk http://localhost
+chromium-browser -start-fullscreen -window-size=1200,800 -kiosk http://localhost
 
